@@ -5,6 +5,9 @@ using ScheduleOne.UI.Shop;
 using ScheduleOne;
 using static ScheduleOne.Registry;
 using ScheduleOne.ItemFramework;
+using static ScheduleOne.UI.Phone.PhoneShopInterface;
+using ScheduleOne.Product.Packaging;
+using CartEntry = ScheduleOne.UI.Shop.CartEntry;
 
 [assembly: MelonInfo(typeof(StackBaseUnitShop.Core), StackBaseUnitShop.BuildInfo.Name, StackBaseUnitShop.BuildInfo.Version, StackBaseUnitShop.BuildInfo.Author, StackBaseUnitShop.BuildInfo.DownloadLink)]
 [assembly: MelonColor()]
@@ -29,16 +32,55 @@ namespace StackBaseUnitShop
             Melon<Core>.Logger.Msg("Initialized.");
         }
 
-        // DEBUG
-        //[HarmonyPatch(typeof(Registry), "AddToItemDictionary")]
-        //public static class Registry_AddToItemDictionary_Patch
-        //{
-        //    public static bool Prefix(Registry __instance, ItemRegister reg)
-        //    {
-        //        Melon<Core>.Logger.Msg("Name: " + reg.Definition.Name + ", Category: " + reg.Definition.Category);
-        //        return true;
-        //    }
-        //}
+        // Shops
+        [HarmonyPatch(typeof(ShopInterface), "ListingClicked")]
+        public static class ShopInterface_ListingClicked_Patch
+        {
+            public static bool Prefix(ShopInterface __instance, ListingUI listingUI)
+            {
+                if (listingUI.Listing.Item.IsPurchasable && listingUI.CanAddToCart())
+                {
+                    int quantity = 1;
+                    if (__instance.AmountSelector.IsOpen)
+                    {
+                        quantity = __instance.AmountSelector.SelectedAmount;
+                    } else if (isStackableOffset(listingUI.Listing.Item))
+                    {
+                        quantity = listingUI.Listing.Item.StackLimit;
+                    }
+
+                    __instance.Cart.AddItem(listingUI.Listing, quantity);
+                    __instance.AddItemSound.Play();
+                }
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(CartEntry), "Initialize")]
+        public static class CartEntry_Initialize_Patch
+        {
+            public static void Postfix(CartEntry __instance, Cart cart, ShopListing listing, int quantity)
+            {
+                // Remove previous Listeners (+1/-1)
+                __instance.IncrementButton.onClick.RemoveAllListeners();
+                __instance.DecrementButton.onClick.RemoveAllListeners();
+
+                // Set offset value
+                int offset = 1;
+                if (isStackableOffset(__instance.Listing.Item)) offset = __instance.Listing.Item.StackLimit;
+
+                // Implement the new button behavior
+                // Note: Can't use ChangeQuantity because it's private ?
+                __instance.IncrementButton.onClick.AddListener(delegate
+                {
+                    __instance.Cart.AddItem(__instance.Listing, offset);
+                });
+                __instance.DecrementButton.onClick.AddListener(delegate
+                {
+                    __instance.Cart.RemoveItem(__instance.Listing, offset);
+                });
+            }
+        }
 
         // Delivery phone app
         [HarmonyPatch(typeof(ListingEntry), "Initialize")]
