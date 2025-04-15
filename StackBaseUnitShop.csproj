@@ -13,6 +13,10 @@
 		<LangVersion>latest</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
+	<ItemGroup>
+	  <EmbeddedResource Remove="package\**" />
+	  <None Remove="package\**" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<Reference Include="AeLa.EasyFeedback.Demo">
@@ -472,6 +476,9 @@
 
 	<ItemGroup>
 		<Compile Include="Core.cs" />
+		<Compile Include="StackLimitLogic.cs" />
+		<Compile Include="UI\UILogic.cs" />
+		<Compile Include="UI\UIUtils.cs" />
 	</ItemGroup>
 	
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">

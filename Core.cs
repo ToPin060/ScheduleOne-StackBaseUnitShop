@@ -2,12 +2,8 @@
 using HarmonyLib;
 using ScheduleOne.UI.Phone.Delivery;
 using ScheduleOne.UI.Shop;
-using ScheduleOne;
-using static ScheduleOne.Registry;
-using ScheduleOne.ItemFramework;
-using static ScheduleOne.UI.Phone.PhoneShopInterface;
-using ScheduleOne.Product.Packaging;
 using CartEntry = ScheduleOne.UI.Shop.CartEntry;
+using StackBaseUnitShop.UI;
 
 [assembly: MelonInfo(typeof(StackBaseUnitShop.Core), StackBaseUnitShop.BuildInfo.Name, StackBaseUnitShop.BuildInfo.Version, StackBaseUnitShop.BuildInfo.Author, StackBaseUnitShop.BuildInfo.DownloadLink)]
 [assembly: MelonColor()]
@@ -21,7 +17,7 @@ namespace StackBaseUnitShop
         public const string Description = "";
         public const string Author = "ToPin060";
         public const string Company = null;
-        public const string Version = "1.0";
+        public const string Version = "2.0";
         public const string DownloadLink = null;
     }
 
@@ -32,7 +28,27 @@ namespace StackBaseUnitShop
             Melon<Core>.Logger.Msg("Initialized.");
         }
 
-        // Shops
+        // Patching Shop UI
+        [HarmonyPatch(typeof(ShopInterface), "Awake")]
+        public static class ShopInterface_Awake_Patch
+        {
+            public static void Postfix(ShopInterface __instance)
+            {
+                UILogic.AddToogleSLButtonShops(__instance);
+            }
+        }
+
+        // Patching Delivery UI
+        [HarmonyPatch(typeof(DeliveryApp), "Start")]
+        public static class DeliveryApp_Start_Patch
+        {
+            public static void Postfix(DeliveryApp __instance)
+            {
+                UILogic.AddToogleSLButtonDelivery(__instance);
+            }
+        }
+
+        // Patching Shops Logic
         [HarmonyPatch(typeof(ShopInterface), "ListingClicked")]
         public static class ShopInterface_ListingClicked_Patch
         {
@@ -44,7 +60,8 @@ namespace StackBaseUnitShop
                     if (__instance.AmountSelector.IsOpen)
                     {
                         quantity = __instance.AmountSelector.SelectedAmount;
-                    } else if (isStackableOffset(listingUI.Listing.Item))
+                    }
+                    else if (StackLimitLogic.UseSL && StackLimitLogic.isConsumableItem(listingUI.Listing.Item))
                     {
                         quantity = listingUI.Listing.Item.StackLimit;
                     }
@@ -65,68 +82,37 @@ namespace StackBaseUnitShop
                 __instance.IncrementButton.onClick.RemoveAllListeners();
                 __instance.DecrementButton.onClick.RemoveAllListeners();
 
-                // Set offset value
-                int offset = 1;
-                if (isStackableOffset(__instance.Listing.Item)) offset = __instance.Listing.Item.StackLimit;
-
                 // Implement the new button behavior
-                // Note: Can't use ChangeQuantity because it's private ?
                 __instance.IncrementButton.onClick.AddListener(delegate
                 {
-                    __instance.Cart.AddItem(__instance.Listing, offset);
+                    StackLimitLogic.onAddRemCartItem(true, __instance, listing);
                 });
                 __instance.DecrementButton.onClick.AddListener(delegate
                 {
-                    __instance.Cart.RemoveItem(__instance.Listing, offset);
+                    StackLimitLogic.onAddRemCartItem(false, __instance, listing);
                 });
             }
         }
 
-        // Delivery phone app
+        // Patching Delivery Logic
         [HarmonyPatch(typeof(ListingEntry), "Initialize")]
         public static class ListingEntry_Initialize_Patch
         {
             public static void Postfix(ListingEntry __instance, ShopListing match)
             {
-                // Remove previous Listeners (+1/-1)
+                // Remove previous listeners
                 __instance.IncrementButton.onClick.RemoveAllListeners();
                 __instance.DecrementButton.onClick.RemoveAllListeners();
 
-                // Set offset value
-                int offset = 1;
-                if (isStackableOffset(match.Item)) offset = match.Item.StackLimit;
-
-                // Implement the new button behavior
-                // Note: Can't use ChangeQuantity because it's private ?
-                __instance.IncrementButton.onClick.AddListener(delegate
+                __instance.IncrementButton.onClick.AddListener(() =>
                 {
-                    __instance.SetQuantity(__instance.SelectedQuantity + offset, true);
+                    StackLimitLogic.onAddRemDeliveryItem(true, __instance, match.Item);
                 });
-                __instance.DecrementButton.onClick.AddListener(delegate
+                __instance.DecrementButton.onClick.AddListener(() =>
                 {
-                    __instance.SetQuantity(__instance.SelectedQuantity - offset, true);
+                    StackLimitLogic.onAddRemDeliveryItem(false, __instance, match.Item);
                 });
             }
-        }
-
-        public static bool isStackableOffset(ItemDefinition item)
-        {
-            if (item.Category == EItemCategory.Packaging) return true;
-            if (item.Category == EItemCategory.Ingredient) return true;
-            if (item.Category == EItemCategory.Consumable) return true;
-            if (item.Category == EItemCategory.Growing)
-            {
-                if (!item.Name.Contains("pot") && !item.Name.Equals("Grow Tent"))
-                { return true; }
-            }
-            if (item.Category == EItemCategory.Tools && item.Name.Equals("Trash Bag"))
-            { return true; }
-
-            // Note: Don't realy understand why this item is not tag as Product
-            if (item.Category == EItemCategory.Product && item.Name.Equals("Speed Grow"))
-            { return true; }
-
-            return false;
         }
     }
 }

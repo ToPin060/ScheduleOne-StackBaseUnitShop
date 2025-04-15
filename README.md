@@ -1,17 +1,30 @@
-# Name: StackBaseUnitShop
-# Version (latest): 1.0.0
+# StackBaseUnitShop
+Version: 2.0
 
-## Modify Shops button to add stack limit
-## Made for Schedule I V0.3.4 (alternate)
-Modify shops (harware, gaz) and delivery app add/remove button in order to use item stack limit (for consumable).
-Source code available on GitHub
+## Description
+Adding/Removing item stack in shops and delivery app.
 
-## Future updates:
-Implementing specific buttons with this current behavior.
-Can be annoying to always use stack limit (even on the items I've targeted).
+Only "consumable" items are scooped. Often buy in big quantity or by stacks.
+
+Consumables: Seeds, ..., Bags, ..., Cuke, ..., etc..
+Others: Fournitures, Tools, etc..
+
+Toogle button on shops/delivery UI is present (top-right) in order to enable/disable mod behavior.
+
+__Source code available on GitHub__
+
 
 ## Installation:
-Switch to alternate branch on steam
-Download and install MelonLoader
-Extract and copy dll inside your Mods folder
-Launch Schedule I and test
+- Use alternate branch on steam (mono version)
+- Download and install MelonLoader
+- Extract and copy dll inside your game Mods folder
+- Launch Schedule I and test
+
+
+## Patch Notes:
+### 2.0.0
++ Adding button to enable/disable mod behavior in the top-right of shops UI. By default is enable.
++ Fix remove button in cart (shops)
+
+### 1.0.0
++ Change default button behavior to add/rem item stack (if item is consumable)
