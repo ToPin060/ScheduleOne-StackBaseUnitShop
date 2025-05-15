@@ -1,17 +1,22 @@
-﻿using MelonLoader;
+using MelonLoader;
 using HarmonyLib;
+#if MONO
 using ScheduleOne.UI.Phone.Delivery;
 using ScheduleOne.UI.Shop;
-using CartEntry = ScheduleOne.UI.Shop.CartEntry;
 using StackBaseUnitShop.UI;
+#else
+using Il2CppScheduleOne.UI.Phone.Delivery;
+using Il2CppScheduleOne.UI.Shop;
+using StackBaseUnitShop.UI;
+#endif
 
 [assembly: MelonInfo(typeof(StackBaseUnitShop.Core), StackBaseUnitShop.BuildInfo.Name, StackBaseUnitShop.BuildInfo.Version, StackBaseUnitShop.BuildInfo.Author, StackBaseUnitShop.BuildInfo.DownloadLink)]
-[assembly: MelonColor()]
 [assembly: MelonGame("TVGS", "Schedule I")]
 
 namespace StackBaseUnitShop
 {
-    public static class BuildInfo
+
+    public class BuildInfo
     {
         public const string Name = "StackBaseUnitShop";
         public const string Description = "";
@@ -20,14 +25,12 @@ namespace StackBaseUnitShop
         public const string Version = "2.0";
         public const string DownloadLink = null;
     }
-
     public class Core : MelonMod
     {
         public override void OnInitializeMelon()
         {
             Melon<Core>.Logger.Msg("Initialized.");
         }
-
         // Patching Shop UI
         [HarmonyPatch(typeof(ShopInterface), "Awake")]
         public static class ShopInterface_Awake_Patch
@@ -37,7 +40,6 @@ namespace StackBaseUnitShop
                 UILogic.AddToogleSLButtonShops(__instance);
             }
         }
-
         // Patching Delivery UI
         [HarmonyPatch(typeof(DeliveryApp), "Start")]
         public static class DeliveryApp_Start_Patch
@@ -47,7 +49,6 @@ namespace StackBaseUnitShop
                 UILogic.AddToogleSLButtonDelivery(__instance);
             }
         }
-
         // Patching Shops Logic
         [HarmonyPatch(typeof(ShopInterface), "ListingClicked")]
         public static class ShopInterface_ListingClicked_Patch
@@ -72,7 +73,6 @@ namespace StackBaseUnitShop
                 return false;
             }
         }
-
         [HarmonyPatch(typeof(CartEntry), "Initialize")]
         public static class CartEntry_Initialize_Patch
         {
@@ -82,7 +82,7 @@ namespace StackBaseUnitShop
                 __instance.IncrementButton.onClick.RemoveAllListeners();
                 __instance.DecrementButton.onClick.RemoveAllListeners();
 
-                // Implement the new button behavior
+#if MONO
                 __instance.IncrementButton.onClick.AddListener(delegate
                 {
                     StackLimitLogic.onAddRemCartItem(true, __instance, listing);
@@ -91,9 +91,19 @@ namespace StackBaseUnitShop
                 {
                     StackLimitLogic.onAddRemCartItem(false, __instance, listing);
                 });
+#else
+                // Implement the new button behavior
+                __instance.IncrementButton.onClick.AddListener(new Action(() =>
+                {
+                    StackLimitLogic.onAddRemCartItem(true, __instance, listing);
+                }));
+                __instance.DecrementButton.onClick.AddListener(new Action(() =>
+                {
+                    StackLimitLogic.onAddRemCartItem(false, __instance, listing);
+                }));
+#endif
             }
         }
-
         // Patching Delivery Logic
         [HarmonyPatch(typeof(ListingEntry), "Initialize")]
         public static class ListingEntry_Initialize_Patch
@@ -104,6 +114,7 @@ namespace StackBaseUnitShop
                 __instance.IncrementButton.onClick.RemoveAllListeners();
                 __instance.DecrementButton.onClick.RemoveAllListeners();
 
+#if MONO
                 __instance.IncrementButton.onClick.AddListener(() =>
                 {
                     StackLimitLogic.onAddRemDeliveryItem(true, __instance, match.Item);
@@ -112,6 +123,16 @@ namespace StackBaseUnitShop
                 {
                     StackLimitLogic.onAddRemDeliveryItem(false, __instance, match.Item);
                 });
+#else
+                __instance.IncrementButton.onClick.AddListener(new Action(() =>
+                {
+                    StackLimitLogic.onAddRemDeliveryItem(true, __instance, match.Item);
+                }));
+                __instance.DecrementButton.onClick.AddListener(new Action(() =>
+                {
+                    StackLimitLogic.onAddRemDeliveryItem(false, __instance, match.Item);
+                }));
+#endif
             }
         }
     }

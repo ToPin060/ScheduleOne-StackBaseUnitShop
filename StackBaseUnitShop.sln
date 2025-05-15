@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35931.197
@@ -7,14 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackBaseUnitShop", "StackB
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Mono|Any CPU = Mono|Any CPU
+		Il2cpp|Any CPU = Il2cpp|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7AD8C2EF-4106-42E4-A6D7-52F360C920F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7AD8C2EF-4106-42E4-A6D7-52F360C920F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7AD8C2EF-4106-42E4-A6D7-52F360C920F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7AD8C2EF-4106-42E4-A6D7-52F360C920F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AD8C2EF-4106-42E4-A6D7-52F360C920F0}.Mono|Any CPU.ActiveCfg = Mono|Any CPU
+		{7AD8C2EF-4106-42E4-A6D7-52F360C920F0}.Mono|Any CPU.Build.0 = Mono|Any CPU
+		{7AD8C2EF-4106-42E4-A6D7-52F360C920F0}.Il2cpp|Any CPU.ActiveCfg = Il2cpp|Any CPU
+		{7AD8C2EF-4106-42E4-A6D7-52F360C920F0}.Il2cpp|Any CPU.Build.0 = Il2cpp|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

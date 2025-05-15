@@ -1,5 +1,5 @@
-<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
@@ -12,464 +12,948 @@
 		<AssemblyName>StackBaseUnitShop</AssemblyName>
 		<LangVersion>latest</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
+	    <Configurations>Mono;Il2cpp</Configurations>
+</PropertyGroup>
+
+	<PropertyGroup>
+		<ScheduleIPath>E:\Steam\steamapps\common\Schedule I</ScheduleIPath>
 	</PropertyGroup>
+	
 	<ItemGroup>
 	  <EmbeddedResource Remove="package\**" />
 	  <None Remove="package\**" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<Reference Include="AeLa.EasyFeedback.Demo">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\AeLa.EasyFeedback.Demo.dll</HintPath>
-		</Reference>
-		<Reference Include="AeLa.EasyFeedback">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\AeLa.EasyFeedback.dll</HintPath>
-		</Reference>
-		<Reference Include="AeLa.EasyFeedback.InputSystemSupport">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\AeLa.EasyFeedback.InputSystemSupport.dll</HintPath>
-		</Reference>
-		<Reference Include="AmplifyImpostors">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\AmplifyImpostors.dll</HintPath>
-		</Reference>
-		<Reference Include="AmplifyImpostors.Runtime">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\AmplifyImpostors.Runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="Assembly-CSharp-firstpass">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
-		</Reference>
-		<Reference Include="Assembly-CSharp">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Assembly-CSharp.dll</HintPath>
-		</Reference>
-		<Reference Include="AstarPathfindingProject">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\AstarPathfindingProject.dll</HintPath>
-		</Reference>
-		<Reference Include="Autodesk.Fbx">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Autodesk.Fbx.dll</HintPath>
-		</Reference>
-		<Reference Include="Boxophobic.AtmosphericHeightFog.Runtime">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Boxophobic.AtmosphericHeightFog.Runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="Boxophobic.Utils.Scripts">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Boxophobic.Utils.Scripts.dll</HintPath>
-		</Reference>
-		<Reference Include="Cinemachine">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Cinemachine.dll</HintPath>
-		</Reference>
-		<Reference Include="com.rlabrecque.steamworks.net">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\com.rlabrecque.steamworks.net.dll</HintPath>
-		</Reference>
-		<Reference Include="CorgiGodRays">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\CorgiGodRays.dll</HintPath>
-		</Reference>
-		<Reference Include="EasyButtons">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\EasyButtons.dll</HintPath>
-		</Reference>
-		<Reference Include="Edgegap">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Edgegap.dll</HintPath>
-		</Reference>
-		<Reference Include="FbxBuildTestAssets">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\FbxBuildTestAssets.dll</HintPath>
-		</Reference>
-		<Reference Include="FishNet.CodeAnalysis">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\FishNet.CodeAnalysis.dll</HintPath>
-		</Reference>
-		<Reference Include="FishNet.Demos">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\FishNet.Demos.dll</HintPath>
-		</Reference>
-		<Reference Include="FishNet.Runtime">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\FishNet.Runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="GameKit.Dependencies">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\GameKit.Dependencies.dll</HintPath>
-		</Reference>
-		<Reference Include="GameKit.Utilities">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\GameKit.Utilities.dll</HintPath>
-		</Reference>
-		<Reference Include="HBAO.Demo.Runtime">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\HBAO.Demo.Runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="HBAO.Demo.Universal.Runtime">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\HBAO.Demo.Universal.Runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="HBAO.Runtime">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\HBAO.Runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="HBAO.Universal.Runtime">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\HBAO.Universal.Runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="HSVPicker">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\HSVPicker.dll</HintPath>
-		</Reference>
-		<Reference Include="LokoSolo.PinchableScrollRect">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\LokoSolo.PinchableScrollRect.dll</HintPath>
-		</Reference>
-		<Reference Include="Newtonsoft.Json">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Newtonsoft.Json.dll</HintPath>
-		</Reference>
-		<Reference Include="Pathfinding.ClipperLib">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Pathfinding.ClipperLib.dll</HintPath>
-		</Reference>
-		<Reference Include="Pathfinding.Ionic.Zip.Reduced">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
-		</Reference>
-		<Reference Include="Pathfinding.Poly2Tri">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Pathfinding.Poly2Tri.dll</HintPath>
-		</Reference>
-		<Reference Include="RadiantGI">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\RadiantGI.dll</HintPath>
-		</Reference>
-		<Reference Include="RootMotion">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\RootMotion.dll</HintPath>
-		</Reference>
-		<Reference Include="RuntimePreviewGenerator.Runtime">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\RuntimePreviewGenerator.Runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="sc.stylizedgrass.runtime">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\sc.stylizedgrass.runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="sc.stylizedwater2.runtime">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\sc.stylizedwater2.runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="StylizedWaterForURP">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\StylizedWaterForURP.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.AI.Navigation">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.AI.Navigation.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Burst">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Burst.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Burst.Unsafe">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Burst.Unsafe.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Collections">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Collections.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Collections.LowLevel.ILSupport">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Formats.Fbx.Runtime">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Formats.Fbx.Runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.InputSystem">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.InputSystem.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.InputSystem.ForUI">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.InputSystem.ForUI.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.InputSystem.RebindingUI">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.InputSystem.RebindingUI.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Mathematics">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Mathematics.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.MemoryProfiler">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.MemoryProfiler.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Postprocessing.Runtime">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Postprocessing.Runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.ProGrids">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.ProGrids.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.RenderPipelines.Core.Runtime">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.RenderPipelines.Universal.Runtime">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.RenderPipelines.Universal.Shaders">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Services.Analytics">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Services.Analytics.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Services.CloudDiagnostics">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Services.CloudDiagnostics.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Services.Core.Analytics">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Services.Core.Analytics.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Services.Core.Configuration">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Services.Core.Configuration.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Services.Core.Device">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Services.Core.Device.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Services.Core">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Services.Core.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Services.Core.Environments">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Services.Core.Environments.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Services.Core.Environments.Internal">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Services.Core.Environments.Internal.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Services.Core.Internal">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Services.Core.Internal.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Services.Core.Networking">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Services.Core.Networking.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Services.Core.Registration">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Services.Core.Registration.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Services.Core.Scheduler">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Services.Core.Scheduler.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Services.Core.Telemetry">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Services.Core.Telemetry.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Services.Core.Threading">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Services.Core.Threading.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.TerrainTools">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.TerrainTools.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.TextMeshPro">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.TextMeshPro.dll</HintPath>
-		</Reference>
-		<Reference Include="Unity.Timeline">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Unity.Timeline.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.AccessibilityModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.AIModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.AIModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.AndroidJNIModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.AndroidJNIModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.AnimationModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.ARModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.ARModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.AssetBundleModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.AudioModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.ClothModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.ClusterInputModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.ClusterRendererModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.ClusterRendererModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.ContentLoadModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.ContentLoadModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.CoreModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.CrashReportingModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.CrashReportingModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.DirectorModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.DirectorModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.DSPGraphModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.DSPGraphModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.GameCenterModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.GameCenterModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.GIModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.GIModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.GridModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.GridModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.HotReloadModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.HotReloadModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.ImageConversionModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.IMGUIModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.InputLegacyModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.InputModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.InputModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.JSONSerializeModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.LocalizationModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.LocalizationModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.NVIDIAModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.NVIDIAModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.ParticleSystemModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.PerformanceReportingModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.PerformanceReportingModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.Physics2DModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.PhysicsModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.ProfilerModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.ProfilerModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.PropertiesModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.PropertiesModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.ScreenCaptureModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.SharedInternalsModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.SpriteMaskModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.SpriteShapeModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.SpriteShapeModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.StreamingModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.StreamingModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.SubstanceModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.SubstanceModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.SubsystemsModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.SubsystemsModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.TerrainModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.TerrainPhysicsModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.TextCoreFontEngineModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.TextCoreTextEngineModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.TextRenderingModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.TilemapModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.TilemapModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.TLSModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.TLSModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.UI">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.UI.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.UIElementsModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.UIModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.UIModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.UmbraModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.UmbraModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.UnityAnalyticsCommonModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.UnityAnalyticsModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.UnityConnectModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.UnityConnectModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.UnityCurlModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.UnityCurlModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.UnityTestProtocolModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.UnityTestProtocolModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.UnityWebRequestAudioModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.UnityWebRequestModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.UnityWebRequestTextureModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.UnityWebRequestWWWModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.VehiclesModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.VFXModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.VFXModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.VideoModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.VirtualTexturingModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.VirtualTexturingModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.VRModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.VRModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.WindModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.WindModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.XRModule">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.XRModule.dll</HintPath>
-		</Reference>
-		<Reference Include="VisualDesignCafe.Nature">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\VisualDesignCafe.Nature.dll</HintPath>
-		</Reference>
-		<Reference Include="VisualDesignCafe.Packages">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\VisualDesignCafe.Packages.dll</HintPath>
-		</Reference>
-		<Reference Include="VisualDesignCafe.ShaderX">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\VisualDesignCafe.ShaderX.dll</HintPath>
-		</Reference>
+	<PropertyGroup Condition="'$(Configuration)' == 'Mono'">
+		<DefineConstants>$(DefineConstants);MONO</DefineConstants>
+		<AssemblyName>StackBaseUnitShop_Mono</AssemblyName>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Il2cpp'">
+		<DefineConstants>$(DefineConstants);IL2CPP</DefineConstants>
+		<AssemblyName>StackBaseUnitShop_Il2CPP</AssemblyName>
+	</PropertyGroup>
+
+	<!-- IL2CPP specific references -->
+	<ItemGroup Condition="'$(Configuration)'=='Il2cpp'">
+		<!-- Core MelonLoader and IL2CPP references -->
 		<Reference Include="MelonLoader">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\MelonLoader\net35\MelonLoader.dll</HintPath>
+			<HintPath>$(ScheduleIPath)\MelonLoader\net6\MelonLoader.dll</HintPath>
 		</Reference>
 		<Reference Include="0Harmony">
-			<HintPath>E:\Steam\steamapps\common\Schedule I\MelonLoader\net35\0Harmony.dll</HintPath>
+			<HintPath>$(ScheduleIPath)\MelonLoader\net6\0Harmony.dll</HintPath>
 		</Reference>
-
+		<Reference Include="Il2CppInterop.Runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppInterop.Common">
+			<HintPath>$(ScheduleIPath)\MelonLoader\net6\Il2CppInterop.Common.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2Cppmscorlib">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
+		</Reference>
+		<!-- Assembly references -->
+		<Reference Include="Assembly-CSharp">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
+		</Reference>
+		<!-- Unity Engine references -->
+		<Reference Include="UnityEngine">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
+		</Reference>
+		<Reference Include="AeLa.EasyFeedback.Demo">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\AeLa.EasyFeedback.Demo.dll</HintPath>
+		</Reference>
+		<Reference Include="AeLa.EasyFeedback">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\AeLa.EasyFeedback.dll</HintPath>
+		</Reference>
+		<Reference Include="AeLa.EasyFeedback.InputSystemSupport">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\AeLa.EasyFeedback.InputSystemSupport.dll</HintPath>
+		</Reference>
+		<Reference Include="AmplifyImpostors">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\AmplifyImpostors.dll</HintPath>
+		</Reference>
+		<Reference Include="AmplifyImpostors.Runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\AmplifyImpostors.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Assembly-CSharp-firstpass">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Assembly-CSharp-firstpass.dll</HintPath>
+		</Reference>
+		<Reference Include="AstarPathfindingProject">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\AstarPathfindingProject.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Fbx">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Autodesk.Fbx.dll</HintPath>
+		</Reference>
+		<Reference Include="Boxophobic.AtmosphericHeightFog.Runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Boxophobic.AtmosphericHeightFog.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Boxophobic.Utils.Scripts">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Boxophobic.Utils.Scripts.dll</HintPath>
+		</Reference>
+		<Reference Include="Cinemachine">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Cinemachine.dll</HintPath>
+		</Reference>
+		<Reference Include="com.rlabrecque.steamworks.net">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\com.rlabrecque.steamworks.net.dll</HintPath>
+		</Reference>
+		<Reference Include="CorgiGodRays">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\CorgiGodRays.dll</HintPath>
+		</Reference>
+		<Reference Include="EasyButtons">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\EasyButtons.dll</HintPath>
+		</Reference>
+		<Reference Include="Edgegap">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Edgegap.dll</HintPath>
+		</Reference>
+		<Reference Include="FbxBuildTestAssets">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\FbxBuildTestAssets.dll</HintPath>
+		</Reference>
+		<Reference Include="FishNet.CodeAnalysis">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\FishNet.CodeAnalysis.dll</HintPath>
+		</Reference>
+		<Reference Include="FishNet.Demos">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\FishNet.Demos.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppFishNet.Runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Il2CppFishNet.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppGameKit.Dependencies">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Il2CppGameKit.Dependencies.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppGameKit.Utilities">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Il2CppGameKit.Utilities.dll</HintPath>
+		</Reference>
+		<Reference Include="HBAO.Demo.Runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\HBAO.Demo.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="HBAO.Demo.Universal.Runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\HBAO.Demo.Universal.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="HBAO.Runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\HBAO.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="HBAO.Universal.Runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\HBAO.Universal.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="HSVPicker">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\HSVPicker.dll</HintPath>
+		</Reference>
+		<Reference Include="LokoSolo.PinchableScrollRect">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\LokoSolo.PinchableScrollRect.dll</HintPath>
+		</Reference>
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Newtonsoft.Json.dll</HintPath>
+		</Reference>
+		<Reference Include="Pathfinding.ClipperLib">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Pathfinding.ClipperLib.dll</HintPath>
+		</Reference>
+		<Reference Include="Pathfinding.Ionic.Zip.Reduced">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+		</Reference>
+		<Reference Include="Pathfinding.Poly2Tri">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Pathfinding.Poly2Tri.dll</HintPath>
+		</Reference>
+		<Reference Include="RadiantGI">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\RadiantGI.dll</HintPath>
+		</Reference>
+		<Reference Include="RootMotion">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\RootMotion.dll</HintPath>
+		</Reference>
+		<Reference Include="RuntimePreviewGenerator.Runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\RuntimePreviewGenerator.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="sc.stylizedgrass.runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\sc.stylizedgrass.runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="sc.stylizedwater2.runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\sc.stylizedwater2.runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="StylizedWaterForURP">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\StylizedWaterForURP.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.AI.Navigation">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.AI.Navigation.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Burst">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Burst.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Burst.Unsafe">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Burst.Unsafe.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Collections">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Collections.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Collections.LowLevel.ILSupport">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Formats.Fbx.Runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Formats.Fbx.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.InputSystem">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.InputSystem.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.InputSystem.ForUI">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.InputSystem.RebindingUI">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.InputSystem.RebindingUI.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Mathematics">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Mathematics.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.MemoryProfiler">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.MemoryProfiler.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Postprocessing.Runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.ProGrids">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.ProGrids.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Core.Runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Universal.Runtime">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Universal.Shaders">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Analytics">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Services.Analytics.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.CloudDiagnostics">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Services.CloudDiagnostics.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Analytics">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Configuration">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Configuration.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Device">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Device.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Services.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Environments">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Environments.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Environments.Internal">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Environments.Internal.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Internal">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Internal.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Networking">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Networking.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Registration">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Registration.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Scheduler">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Scheduler.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Telemetry">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Telemetry.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Threading">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Threading.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.TerrainTools">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.TerrainTools.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.TextMeshPro">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.TextMeshPro.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Timeline">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\Unity.Timeline.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AccessibilityModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.AccessibilityModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AIModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.AIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AndroidJNIModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.AndroidJNIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AnimationModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.AnimationModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ARModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.ARModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AssetBundleModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.AssetBundleModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AudioModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.AudioModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ClothModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.ClothModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ClusterInputModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.ClusterInputModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ClusterRendererModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.ClusterRendererModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ContentLoadModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.ContentLoadModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.CrashReportingModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.CrashReportingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.DirectorModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.DirectorModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.DSPGraphModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.DSPGraphModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.GameCenterModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.GameCenterModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.GIModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.GIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.GridModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.GridModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.HotReloadModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.HotReloadModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ImageConversionModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.ImageConversionModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.IMGUIModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.IMGUIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.InputLegacyModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.InputLegacyModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.InputModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.InputModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.JSONSerializeModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.JSONSerializeModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.LocalizationModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.LocalizationModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.NVIDIAModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.NVIDIAModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ParticleSystemModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.ParticleSystemModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.PerformanceReportingModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.PerformanceReportingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.Physics2DModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.Physics2DModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.PhysicsModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.PhysicsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ProfilerModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.ProfilerModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.PropertiesModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.PropertiesModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ScreenCaptureModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.ScreenCaptureModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SharedInternalsModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.SharedInternalsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SpriteMaskModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.SpriteMaskModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SpriteShapeModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.SpriteShapeModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.StreamingModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.StreamingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SubstanceModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.SubstanceModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SubsystemsModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.SubsystemsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TerrainModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.TerrainModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TerrainPhysicsModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TextCoreFontEngineModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TextCoreTextEngineModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TextRenderingModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.TextRenderingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TilemapModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.TilemapModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TLSModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.TLSModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UI">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.UI.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UIElementsModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.UIElementsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UIModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.UIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UmbraModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.UmbraModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityAnalyticsModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityConnectModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityConnectModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityCurlModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityCurlModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityTestProtocolModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestAudioModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestTextureModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestWWWModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VehiclesModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.VehiclesModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VFXModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.VFXModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VideoModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.VideoModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VirtualTexturingModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.VirtualTexturingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VRModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.VRModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.WindModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.WindModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.XRModule">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\UnityEngine.XRModule.dll</HintPath>
+		</Reference>
+		<Reference Include="VisualDesignCafe.Nature">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\VisualDesignCafe.Nature.dll</HintPath>
+		</Reference>
+		<Reference Include="VisualDesignCafe.Packages">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\VisualDesignCafe.Packages.dll</HintPath>
+		</Reference>
+		<Reference Include="VisualDesignCafe.ShaderX">
+			<HintPath>$(ScheduleIPath)\MelonLoader\Il2CppAssemblies\VisualDesignCafe.ShaderX.dll</HintPath>
+		</Reference>
+		<!-- Add other IL2CPP references as needed -->
 	</ItemGroup>
 
-	<PropertyGroup>
+	<!-- Mono specific references -->
+	<ItemGroup Condition="'$(Configuration)'=='Mono'">
+		<!-- Core MelonLoader references -->
+		<Reference Include="MelonLoader">
+			<HintPath>$(ScheduleIPath)\MelonLoader\net35\MelonLoader.dll</HintPath>
+		</Reference>
+		<Reference Include="0Harmony">
+			<HintPath>$(ScheduleIPath)\MelonLoader\net35\0Harmony.dll</HintPath>
+		</Reference>
+		<!-- Assembly references -->
+		<Reference Include="Assembly-CSharp">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Assembly-CSharp.dll</HintPath>
+		</Reference>
+		<!-- Unity Engine references -->
+		<Reference Include="UnityEngine">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+		</Reference>
+		<Reference Include="AeLa.EasyFeedback.Demo">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\AeLa.EasyFeedback.Demo.dll</HintPath>
+		</Reference>
+		<Reference Include="AeLa.EasyFeedback">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\AeLa.EasyFeedback.dll</HintPath>
+		</Reference>
+		<Reference Include="AeLa.EasyFeedback.InputSystemSupport">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\AeLa.EasyFeedback.InputSystemSupport.dll</HintPath>
+		</Reference>
+		<Reference Include="AmplifyImpostors">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\AmplifyImpostors.dll</HintPath>
+		</Reference>
+		<Reference Include="AmplifyImpostors.Runtime">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\AmplifyImpostors.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Assembly-CSharp-firstpass">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+		</Reference>
+		<Reference Include="AstarPathfindingProject">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\AstarPathfindingProject.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Fbx">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Autodesk.Fbx.dll</HintPath>
+		</Reference>
+		<Reference Include="Boxophobic.AtmosphericHeightFog.Runtime">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Boxophobic.AtmosphericHeightFog.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Boxophobic.Utils.Scripts">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Boxophobic.Utils.Scripts.dll</HintPath>
+		</Reference>
+		<Reference Include="Cinemachine">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Cinemachine.dll</HintPath>
+		</Reference>
+		<Reference Include="com.rlabrecque.steamworks.net">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\com.rlabrecque.steamworks.net.dll</HintPath>
+		</Reference>
+		<Reference Include="CorgiGodRays">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\CorgiGodRays.dll</HintPath>
+		</Reference>
+		<Reference Include="EasyButtons">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\EasyButtons.dll</HintPath>
+		</Reference>
+		<Reference Include="Edgegap">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Edgegap.dll</HintPath>
+		</Reference>
+		<Reference Include="FbxBuildTestAssets">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\FbxBuildTestAssets.dll</HintPath>
+		</Reference>
+		<Reference Include="FishNet.CodeAnalysis">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\FishNet.CodeAnalysis.dll</HintPath>
+		</Reference>
+		<Reference Include="FishNet.Demos">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\FishNet.Demos.dll</HintPath>
+		</Reference>
+		<Reference Include="FishNet.Runtime">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\FishNet.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="GameKit.Dependencies">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\GameKit.Dependencies.dll</HintPath>
+		</Reference>
+		<Reference Include="GameKit.Utilities">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\GameKit.Utilities.dll</HintPath>
+		</Reference>
+		<Reference Include="HBAO.Demo.Runtime">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\HBAO.Demo.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="HBAO.Demo.Universal.Runtime">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\HBAO.Demo.Universal.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="HBAO.Runtime">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\HBAO.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="HBAO.Universal.Runtime">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\HBAO.Universal.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="HSVPicker">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\HSVPicker.dll</HintPath>
+		</Reference>
+		<Reference Include="LokoSolo.PinchableScrollRect">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\LokoSolo.PinchableScrollRect.dll</HintPath>
+		</Reference>
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Newtonsoft.Json.dll</HintPath>
+		</Reference>
+		<Reference Include="Pathfinding.ClipperLib">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Pathfinding.ClipperLib.dll</HintPath>
+		</Reference>
+		<Reference Include="Pathfinding.Ionic.Zip.Reduced">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+		</Reference>
+		<Reference Include="Pathfinding.Poly2Tri">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Pathfinding.Poly2Tri.dll</HintPath>
+		</Reference>
+		<Reference Include="RadiantGI">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\RadiantGI.dll</HintPath>
+		</Reference>
+		<Reference Include="RootMotion">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\RootMotion.dll</HintPath>
+		</Reference>
+		<Reference Include="RuntimePreviewGenerator.Runtime">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\RuntimePreviewGenerator.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="sc.stylizedgrass.runtime">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\sc.stylizedgrass.runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="sc.stylizedwater2.runtime">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\sc.stylizedwater2.runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="StylizedWaterForURP">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\StylizedWaterForURP.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.AI.Navigation">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.AI.Navigation.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Burst">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Burst.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Burst.Unsafe">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Burst.Unsafe.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Collections">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Collections.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Collections.LowLevel.ILSupport">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Formats.Fbx.Runtime">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Formats.Fbx.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.InputSystem">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.InputSystem.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.InputSystem.ForUI">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.InputSystem.ForUI.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.InputSystem.RebindingUI">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.InputSystem.RebindingUI.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Mathematics">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Mathematics.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.MemoryProfiler">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.MemoryProfiler.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Postprocessing.Runtime">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Postprocessing.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.ProGrids">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.ProGrids.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Core.Runtime">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Universal.Runtime">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Universal.Shaders">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Analytics">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Services.Analytics.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.CloudDiagnostics">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Services.CloudDiagnostics.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Analytics">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Services.Core.Analytics.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Configuration">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Services.Core.Configuration.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Device">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Services.Core.Device.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Services.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Environments">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Services.Core.Environments.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Environments.Internal">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Services.Core.Environments.Internal.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Internal">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Services.Core.Internal.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Networking">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Services.Core.Networking.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Registration">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Services.Core.Registration.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Scheduler">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Services.Core.Scheduler.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Telemetry">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Services.Core.Telemetry.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Threading">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Services.Core.Threading.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.TerrainTools">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.TerrainTools.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.TextMeshPro">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Timeline">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\Unity.Timeline.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AccessibilityModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AIModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.AIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AndroidJNIModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.AndroidJNIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AnimationModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ARModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.ARModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AssetBundleModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AudioModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ClothModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ClusterInputModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ClusterRendererModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.ClusterRendererModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ContentLoadModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.ContentLoadModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.CrashReportingModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.CrashReportingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.DirectorModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.DirectorModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.DSPGraphModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.DSPGraphModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.GameCenterModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.GameCenterModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.GIModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.GIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.GridModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.GridModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.HotReloadModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.HotReloadModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ImageConversionModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.IMGUIModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.InputLegacyModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.InputModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.InputModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.JSONSerializeModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.LocalizationModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.LocalizationModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.NVIDIAModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.NVIDIAModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ParticleSystemModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.PerformanceReportingModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.PerformanceReportingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.Physics2DModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.PhysicsModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ProfilerModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.ProfilerModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.PropertiesModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.PropertiesModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ScreenCaptureModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SharedInternalsModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SpriteMaskModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SpriteShapeModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.SpriteShapeModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.StreamingModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.StreamingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SubstanceModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.SubstanceModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SubsystemsModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.SubsystemsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TerrainModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TerrainPhysicsModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TextCoreFontEngineModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TextCoreTextEngineModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TextRenderingModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TilemapModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.TilemapModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TLSModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.TLSModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UI">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.UI.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UIElementsModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UIModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UmbraModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.UmbraModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityAnalyticsModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityConnectModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.UnityConnectModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityCurlModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.UnityCurlModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityTestProtocolModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestAudioModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestTextureModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestWWWModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VehiclesModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VFXModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.VFXModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VideoModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VirtualTexturingModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.VirtualTexturingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VRModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.VRModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.WindModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.WindModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.XRModule">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\UnityEngine.XRModule.dll</HintPath>
+		</Reference>
+		<Reference Include="VisualDesignCafe.Nature">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\VisualDesignCafe.Nature.dll</HintPath>
+		</Reference>
+		<Reference Include="VisualDesignCafe.Packages">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\VisualDesignCafe.Packages.dll</HintPath>
+		</Reference>
+		<Reference Include="VisualDesignCafe.ShaderX">
+			<HintPath>$(ScheduleIPath)\Schedule I_Data\Managed\VisualDesignCafe.ShaderX.dll</HintPath>
+		</Reference>
+		<!-- Add other Mono references as needed -->
+	</ItemGroup>
+
+<PropertyGroup>
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
 		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
 	</PropertyGroup>
@@ -480,8 +964,8 @@
 		<Compile Include="UI\UILogic.cs" />
 		<Compile Include="UI\UIUtils.cs" />
 	</ItemGroup>
-	
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Exec Command="COPY &quot;$(TargetPath)&quot; &quot;E:\Steam\steamapps\common\Schedule I\Mods&quot;" />
+
+<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="COPY &quot;$(TargetPath)&quot; &quot;$(ScheduleIPath)\Mods&quot;" />
 	</Target>
 </Project>
